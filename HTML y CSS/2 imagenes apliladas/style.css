@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: aqua;
+}
+
+.imagenes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.imagenes-container .imagen {
+  position: relative;
+  margin-right: -2rem;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.imagenes-container .imagen img {
+  width: 15rem;
+  height: 15em;
+}
+
+.imagenes-container .imagen .nombre_pokemon {
+  position: absolute;
+  background-color: black;
+  border-radius: 1rem;
+  color: white;
+  display: none;
+  min-width: 10rem;
+  width: 15rem;
+  top: -4rem;
+  padding: 1rem 1.5rem;
+
+}
+
+.imagenes-container .imagen:hover .nombre_pokemon {
+  display: inline-block;
+  transform: translateY(-2rem) ;
+}
+
+.imagenes-container .imagen .nombre_pokemon .text {
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  width: 10rem;
+  text-align: center;
+  box-sizing: border-box;
+
+
+}
+
+.imagenes-container .imagen .nombre_pokemon::before {
+  content: "";
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  left: 40%;
+  bottom: -2rem;
+  border-top: 1rem solid black;
+  border-right: 1rem solid transparent;
+  border-bottom: 1rem solid transparent;
+  border-left: 1rem solid transparent;
+
+}
+
+.imagenes-container .imagen:hover img {
+  transform: translateY(-2rem);
+  transition: transform 0.2s ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+  .imagenes-container {
+    margin-right: 2rem;
+    flex-direction: column;
+    height: 120vh;
+  }
+}
